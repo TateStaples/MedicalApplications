@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+
+	"name": "Noter",
+	"description": "A chrome extension to take notes on medical applicants",
+	"version": "1.1",
+	"author": "@tatestaples",
+
+	"permissions": [
+		"activeTab",
+		"storage"
+	],
+
+	"browser_action": {
+		"default_icon": "noter_logo.png",
+		"default_popup": "popup.html"
+	},
+
+	"content_scripts": [
+		{
+			"matches": ["https://apps.aamc.org/eras-pdws-web/home/application/application"],
+			"js": ["configs.js", "scraper.js", "onLoad.js"]
+		}
+	]
+}
